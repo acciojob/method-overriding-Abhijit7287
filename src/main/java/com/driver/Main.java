@@ -4,28 +4,27 @@ public class Main {
   
    public static void main (String[]args){
      
-    Child b = new Child();
+    Parent b = new Child();
     
-    String s = b.meth("abc");
+    System.out.println(b.meth());
     
-    System.out.println(s);
+    Child a = new Child();
     
-    String s1 = b.meth2("abc");
-    
-     System.out.println(s1);
+    System.out.println(a.meth());
        
    }
-   public static class Parent {
+}
+   class Parent {
        
-      public static String meth(String s){
+      public String meth(){
        return "Invoking method from class A";
       }
        
    }
-   public static class Child extends Parent
-   {
-       public static String meth2(String s){
+   class Child extends Parent
+   {   
+       @Override
+       public String meth(){
        return "Method is overridden in Extendend class B";
        }
    }
-}
