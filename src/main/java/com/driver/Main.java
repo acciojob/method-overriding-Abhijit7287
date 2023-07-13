@@ -4,24 +4,24 @@ public class Main {
   
    public static void main (String[]args){
      
-    Parent b = new Child();
+    A b = new B();
     
     System.out.println(b.meth());
     
-    Child a = new Child();
+    B a = new B();
     
     System.out.println(a.meth());
        
    }
 }
-   class Parent {
+   class A {
        
       public String meth(){
        return "Invoking method from class A";
       }
        
    }
-   class Child extends Parent
+   class B extends A
    {   
        @Override
        public String meth(){
